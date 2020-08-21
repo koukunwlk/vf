@@ -14,14 +14,22 @@ router.get('/', (req, res)=>{
 router.post('/', async(req, res)=> {
     axios.defaults.withCredentials = true
 
-    let user = JSON.stringify({...req.body})
+    let user = {...req.body}
     try {
-        let response = await axios.post(`${baseurl}/auth`,user )
-        res.send(response.status)
+        let {status, data} = await axios.post(`${baseurl}/auth`, user )
+        if(status == 200){
+            return res.send(data)
+        }else{
+            return res.send("Usuário invalido")
+        }
     } catch (error) {
         console.log(error)
     }
     
+})
+
+router.get('/produto',(req, res)=>{
+    return res.render('produto.njk')
 })
 
 

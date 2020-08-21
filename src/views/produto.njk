@@ -1,0 +1,54 @@
+{% extends 'layout.njk' %}
+{% block content %}
+    <div class="container">
+        <h3>Adicionar um novo produto</h3>
+        <table>
+            <tr>
+                <th>CODIGO DE BARRAS</th>
+                <th>PRODUTO</th>
+                <th>QUANTIDADE</th>
+                <th>FORNECEDORES</th>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" name="ean">
+                </td>
+                <td>
+                    <input type="text" name="prodDesc" disabled>
+                </td>
+                <td>
+                    <input type="text" name="qnt">
+                </td>
+                <td>
+                    <select name="provider" >
+                        <option>Rede</option>
+                        <option>Rede</option>
+                        <option>Rede</option>
+                        <option>Rede</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="last-items">
+        <h1>5 Ultimos itens adicionados</h1>
+        <table>
+            <tr>
+                <th>PRODUTO</th>
+                <th>QUANTIDADE</th>
+                <th>FORNECEDORES</th>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" name="prodDesc" disabled value="">
+                </td>
+                <td>
+                    <input type="text" name="prodQnt" disabled value="">
+                </td>
+                <td>
+                    <input type="text" name="prodFornecedor" disabled value="">
+                </td>
+            </tr>
+        </table>
+    </div>
+{% endblock content %}

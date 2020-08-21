@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    font-family: 'Roboto', 'sans-serif';
+}
+
+.container-login{
+    width: 50vh;
+    height: 60vh;
+    background-color: #ecf0f1;
+    margin: 20vh auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 24px;
+}
+
+.login-holder img{
+    width: 30vh;
+}
+
+.inputs{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.inputs input{
+    padding: 8px 16px;
+    font-size: 3vh;
+    margin-top: 1vh;
+    border-radius: 8px;
+}
+
+.inputs h3{
+    font-size:4vh;
+}
+
+button{
+    display: grid;
+    padding: 8px;
+    width: 7vw;
+    height: 4.5vh;
+    text-align: center;
+    background-color: #003488;
+    color: #eeeeee;
+    font-size: 2vh;
+    margin-top: 3vh;
+    align-self: flex-end;
+    border-radius: 8px;
+    transition: background 150ms;
+}
+
+button:hover{
+  background-color: #E4284D;
+}
+
+.inputs input:focus{
+    border: 1px solid #003488
+}
+
+/* LAYOUT STYLE */
+
+header{
+    background-color: #777777;
+    width: 96vw;
+    height: 7vh;
+    margin: 0 auto;
+}
+nav{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 1vw;
+}
+
+header a{
+    text-decoration: none;
+    font-size: 4vh;
+    color: #eeeeee;
+}
