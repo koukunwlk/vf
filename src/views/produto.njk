@@ -7,24 +7,29 @@
                 <th>CODIGO DE BARRAS</th>
                 <th>PRODUTO</th>
                 <th>QUANTIDADE</th>
+                <th>CUSTO</th>
                 <th>FORNECEDORES</th>
             </tr>
             <tr>
                 <td>
-                    <input type="text" name="ean">
-                </td>
+                    <form class="form-id"action="#" method="post">
+                        <input type="text" name="id" class="input-id" value="{{produto.ean}}">
+                    </form>
+                </td>   
                 <td>
-                    <input type="text" name="prodDesc" disabled>
+                    <input type="text" name="prodDesc" disabled value="{{produto.desc}}">
                 </td>
                 <td>
                     <input type="text" name="qnt">
                 </td>
                 <td>
+                    <input type="text" name="custo" disabled value="R${{produto.custo}}">
+                </td>
+                <td>
                     <select name="provider" >
-                        <option>Rede</option>
-                        <option>Rede</option>
-                        <option>Rede</option>
-                        <option>Rede</option>
+                        {% for provider in produto.providers %}
+                            <option value="{{prodiver.id}}">{{provider.name}}</option>
+                        {% endfor %}
                     </select>
                 </td>
             </tr>
@@ -40,6 +45,7 @@
             </tr>
             <tr>
                 <td>
+                    
                     <input type="text" name="prodDesc" disabled value="">
                 </td>
                 <td>
@@ -51,4 +57,5 @@
             </tr>
         </table>
     </div>
+    <script src="/script.js"></script>
 {% endblock content %}

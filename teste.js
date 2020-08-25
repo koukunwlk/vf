@@ -36,7 +36,14 @@ async function getToken(){
 
 let token = getToken()
 
-async function getProdInfo(ean){
+async function getAll(){
+    token = await token
+    let prod = await axios.get(`${baseUrl}/v1/produto/produtos/consulta/${ean}`,{headers:{ 'Authorization': token}})
+    .then()
+
+}
+
+/* async function getProdInfo(ean){
     token = await token
     let {data} = await axios.get(`${baseUrl}/v1/produto/produtos/consulta/${ean}`,{headers:{ 'Authorization': token}})
     let prod = {id: data.id, desc: data.descricao}
@@ -69,7 +76,10 @@ async function getProdProviders(ean){
     prod = {...prod, providers}
     return prod
 }
-
+async function getAll(ean){
+    token = await token
+    
+}
 /* async function getPrices(ean){
     try {
         prod = await getProdProviders(ean)
@@ -91,7 +101,7 @@ async function getProdProviders(ean){
     let id = Object.values(req.body)
     let prod = await getPrices(id)
     res.send(prod)
-}) */
+}) 
 
 module.exports = async function getPrices(ean){
     try {
@@ -105,21 +115,4 @@ module.exports = async function getPrices(ean){
         return error
     }
     
-} 
-
-/* async function getPrices(ean){
-    try {
-        prod = await getProdProviders(ean)
-        let {data} = await axios.get(`${baseUrl}/v1/produto/produtos/${prod.id}/custos`,{headers:{ 'Authorization': token}}) 
-        let custo = data[0].custoReposicao.toFixed(2)
-        custo = parseFloat(custo)
-        prod = {...prod, custo }
-        console.log(prod)
-    } catch (error) {
-        return error
-    }
-    
-} 
-getPrices('1')
-
-server.listen(5000, console.log('server running')) */
+}  */

@@ -4,6 +4,7 @@ const axios = require('axios')
 const cors = require('cors')
 const nunjucks = require('nunjucks')
 const server = express()
+const getItem = require('../script.js')
 
 server.use(cors())
 let baseurl = "https://supermercadoosarina.varejofacil.com/api"
@@ -32,6 +33,12 @@ router.post('/', async(req, res)=> {
 router.get('/produto',(req, res)=>{
     return res.render('produto.njk')
 })
-
+router.post('/produto', async(req,res)=>{
+    let {id} = req.body
+    
+    let produto = await getItem(id)
+    // res.json(produto)
+    res.render('produto.njk', {produto})
+})
 
 module.exports = router 
